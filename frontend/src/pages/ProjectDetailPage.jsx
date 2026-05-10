@@ -477,8 +477,8 @@ const ProjectDetailPage = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Assign To</label>
-                      <select value={newTask.assigned_to_id} onChange={e => setNewTask({...newTask, assigned_to_id: e.target.value})} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:bg-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm shadow-subtle appearance-none">
-                        <option value="">-- Unassigned --</option>
+                      <select required value={newTask.assigned_to_id} onChange={e => setNewTask({...newTask, assigned_to_id: e.target.value})} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:bg-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm shadow-subtle appearance-none">
+                        <option value="" disabled>-- Choose Assignee --</option>
                         {project.members?.map(m => (
                           <option key={m.user_id} value={m.user_id}>{m.user?.name}</option>
                         ))}
